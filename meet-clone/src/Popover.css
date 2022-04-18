@@ -1,0 +1,45 @@
+.home_btn {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 100px;
+    color: #3c4043;
+    margin: 16px 0 0;
+    max-width: 254px;
+    padding: 8px 16px;
+    font-family: "Poppins";
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    width: 400px;
+}
+
+.home_addBtn:hover {
+    background-color: #f7f8f8;
+}
+
+.home_addIcon {
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.home_signOut {
+    margin-top: 20px;
+    color: #5f6368;
+    text-transform: capitalize;
+}
+
+.home_popover_footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 120%;
+    align-items: center;
+    color: #5f6368;
+    justify-content: center;
+    border-top: 1px solid #dadce0;
+    padding-top: 5px;
+}
+
+home_popover_footer > span {
+    margin: 10px;
+}
