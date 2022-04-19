@@ -3,6 +3,7 @@ import "./Header.css"
 import "./Popover.css"
 import { Apps, CameraAltOutlined, FeedbackOutlined, HelpOutline, PersonAddOutlined, Settings } from "@material-ui/icons"
 import { Avatar, Badge, Button, makeStyles, Popover } from "@material-ui/core";
+import { useAppContext } from './Context';
 
 const useStyles = makeStyles((theme) => ({
     large: {
