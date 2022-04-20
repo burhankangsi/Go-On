@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Link, Navigate, useNavigate, createSearchParams } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 import { Form, Spin, Input, Button, notification, Row, Col } from 'antd';
 import Icon from '@ant-design/icons';
 
-// Presentational
+/** Presentational */
 import FormWrapper from './FormWrapper';
 
-// App theme
+/** App theme */
 import { colors } from './Themes/Colors';
 
 type Props = {
@@ -67,8 +67,6 @@ class ForgotPasswordContainer extends React.Component<Props, State> {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { loading, redirect, username } = this.state;
-    const navigate = useNavigate();
-    const params = { user: 'date', order: 'newest' };
 
     return (
       <React.Fragment>
@@ -103,16 +101,16 @@ class ForgotPasswordContainer extends React.Component<Props, State> {
           </Form.Item>
         </FormWrapper>
         {redirect && (
-          navigate({
-          //  to={{
+          <Navigate
+            to={{
               pathname: '/reset-password',
-              search: ?${createSearchParams(params)},
-         //   }}
-          });
-        )//}
+              search: `?username=${username}`
+            }}
+          />
+        )}
       </React.Fragment>
     );
   }
 }
 
-export default Form.create()(ForgotPasswordContainer);
+export default ForgotPasswordContainer;
