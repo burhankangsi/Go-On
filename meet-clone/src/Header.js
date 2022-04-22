@@ -4,6 +4,7 @@ import "./Popover.css"
 import { Apps, CameraAltOutlined, FeedbackOutlined, HelpOutline, PersonAddOutlined, Settings } from "@material-ui/icons"
 import { Avatar, Badge, Button, makeStyles, Popover } from "@material-ui/core";
 import { useAppContext } from './Context';
+import { auth } from "../lib/firebase"
 
 const useStyles = makeStyles((theme) => ({
     large: {
@@ -15,9 +16,10 @@ const Header = () => {
 
 const classes = useStyles();
 
-const [currentUser, setCurrentUser] = useState(null);
+//const [currentUser, setCurrentUser] = useState(null);
 const [appState, setAppState] = useState("empty");
 const [anchorEl, setAnchorEl] = React.useState(null);
+const { currentUser } = useAppContext();
 
 const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -54,10 +56,10 @@ setAnchorEl(null);
                 open={open}
                 id={id}
                 onClose={handleClose}
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "center",
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
           }}
           transformOrigin={{
             vertical: "top",
@@ -81,12 +83,13 @@ setAnchorEl(null);
               </Badge>
               <div className="home__text">
                 <div className="home__displayName">
-                  {/* {currentUser.displayName} */}
-                  PULKIT GUPTA
+                  {currentUser.displayName}
+                  {/* PULKIT GUPTA */}
+
                 </div>
                 <div className="home__mail">
-                  {/* {currentUser.email} */}
-                  gpulkit712@gmail.com
+                  {currentUser.email}
+                  {/* gpulkit712@gmail.com */}
                 </div>
               </div>
               <div className="home__btn">Manage your google account</div>
@@ -101,7 +104,7 @@ setAnchorEl(null);
               <Button
                 //onClick={() => auth.signOut()}
                 variant="outlined"
-                className="home__signOut"
+                className="home__signOut" onClick={() => auth.signOut()}
               >
                 Sign Out
               </Button>
