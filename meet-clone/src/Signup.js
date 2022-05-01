@@ -5,8 +5,8 @@ import {
   TextField,
 } from "@material-ui/core";
 import React, { useState } from "react";
-import { auth } from "../../lib/firebase";
-import "./styles.css";
+import { auth } from "./firebase";
+import "./Signup.css";
 
 const intialFormData = {
   firstName: "",
