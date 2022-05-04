@@ -25,7 +25,7 @@ function VideoChat() {
 
     const handleSubmit = useCallback(async ()=> {
         setConnecting(true);
-
+        console.log("calling gmail api");
         const data = await fetch("/video/token", {
             method: "POST",
             body: JSON.stringify({
