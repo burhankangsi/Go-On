@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { ContextProvider } from "./Context";
-import "animate.css";
-import { RoomContextProvider } from "./Context/videoContext";
+import { RoomContextProvider } from "./VideoContext";
 
 ReactDOM.render(
   <ContextProvider>

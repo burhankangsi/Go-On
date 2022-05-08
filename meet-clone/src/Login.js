@@ -1,8 +1,8 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import { auth } from "../../lib/firebase";
-import Signup from "../Signup/Signup";
-import "./styles.css";
+import { auth } from "./firebase";
+import Signup from "./Signup";
+import "./Login.css";
 
 const Signin = () => {
   const [showSignup, setShowSignup] = useState(false);
